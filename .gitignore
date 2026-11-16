@@ -1,0 +1,36 @@
+# Local credentials and secret configuration
+**/digicam_config.h
+.env
+.env.*
+**/*.secrets.*
+*.pem
+*.key
+*.p12
+
+# Local images and generated capture metadata
+/captures/
+/backend/captures/
+
+# Python environments, bytecode, and test caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Arduino and embedded build artifacts
+**/build/
+**/.pio/
+*.bin
+*.elf
+*.map
+*.o
+*.a
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

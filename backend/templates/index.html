@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f5">
+  <title>DIGICAM — Your camera, at home</title>
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="DIGICAM home"><span class="brand-mark">D</span><span>DIGICAM</span></a>
+    <div class="side-label">LIBRARY</div>
+    <a class="nav-item active" href="#gallery"><span class="nav-icon">▦</span>All captures<span class="nav-count" id="side-count">0</span></a>
+    <div class="sidebar-bottom"><span class="online-dot"></span><span>Private &amp; local</span><span class="side-lock">⌑</span></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><div class="crumb">Your space <span>/</span> <b>Gallery</b></div><div class="top-right"><span class="connection"><i id="connection-dot"></i><span id="connection-text">Connecting</span></span><span class="avatar">D</span></div></header>
+    <section class="welcome">
+      <div><div class="eyebrow"><span class="eyebrow-line"></span> YOUR CAMERA, AT HOME</div><h1>Every moment,<br class="mobile-break"> <span>right here.</span></h1><p class="intro">A quiet little home for the photos you take.</p></div>
+      <button class="button primary" id="upload-button"><span class="button-plus">＋</span> Add photos</button>
+      <input id="file-input" type="file" accept="image/jpeg,.jpg,.jpeg" multiple hidden>
+    </section>
+
+    <section class="stats" aria-label="Library overview">
+      <article class="stat-card"><div class="stat-icon lavender">▧</div><div><div class="stat-label">CAPTURES</div><div class="stat-value" id="capture-count">—</div></div></article>
+      <article class="stat-card"><div class="stat-icon mint">◷</div><div><div class="stat-label">LATEST MOMENT</div><div class="stat-value stat-latest" id="latest-capture">—</div></div></article>
+      <article class="stat-card"><div class="stat-icon peach">▤</div><div><div class="stat-label">LIBRARY SIZE</div><div class="stat-value" id="storage-size">—</div></div></article>
+      <article class="stat-card device-card"><div class="device-glyph"><span></span></div><div><div class="stat-label">CAMERA</div><div class="stat-value device-state"><i id="device-dot"></i><span id="device-status">Waiting for camera</span></div></div><span class="device-chevron">›</span></article>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="gallery-heading"><div><h2>Your captures <span id="heading-count">0</span></h2><p>All the little things worth keeping.</p></div><div class="gallery-actions"><label class="search"><span>⌕</span><input id="search-input" type="search" placeholder="Find a photo…" aria-label="Search photos"></label><select id="sort-select" aria-label="Sort captures"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></div></div>
+      <div id="notice" class="notice" hidden></div>
+      <div id="dropzone" class="dropzone" hidden><div class="drop-icon">↑</div><b>Drop your photos here</b><span>JPEG images up to 16 MB</span></div>
+      <div id="gallery-grid" class="gallery-grid" aria-live="polite"></div>
+      <div id="empty-state" class="empty-state" hidden><div class="empty-art"><span class="sun"></span><span class="hill hill-one"></span><span class="hill hill-two"></span><span class="frame">＋</span></div><h3>Your gallery starts here</h3><p>When you take a photo, it’ll find its way home.<br>For now, add a JPEG to see how your gallery works.</p><button class="button secondary" id="empty-upload">Choose a photo</button></div>
+      <div id="no-results" class="no-results" hidden>No photos match that search.</div>
+    </section>
+    <footer><span><span class="footer-mark">D</span> DIGICAM</span><span>Your photos stay on this laptop.</span></footer>
+  </main>
+
+  <dialog id="photo-dialog" class="photo-dialog"><button class="dialog-close" id="dialog-close" aria-label="Close">×</button><div class="dialog-image-wrap"><img id="dialog-image" alt="Selected capture"></div><div class="dialog-info"><div><div class="dialog-date" id="dialog-date"></div><h2 id="dialog-title"></h2><div class="metadata" id="dialog-metadata"></div></div><div class="dialog-actions"><a id="download-link" class="button secondary" download>↓ Download</a><button id="delete-button" class="button danger">Delete</button></div></div></dialog>
+  <script src="../static/app.js" defer></script>
+</body>
+</html>
